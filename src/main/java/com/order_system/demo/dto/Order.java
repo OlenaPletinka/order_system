@@ -7,24 +7,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
-@Table
+@Table(name = "orders")
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  Long id;
+  private Long id;
 
   @Column
-  LocalDateTime date;
+  private LocalDateTime time;
 
-  @Enumerated
-  Status status;
+  @Enumerated(EnumType.STRING)
+  private OrderStatus status;
 
-  @Column
-  String description;
+  @OneToMany(mappedBy = "orders")
+  private List<Ticket> tickets;
 }

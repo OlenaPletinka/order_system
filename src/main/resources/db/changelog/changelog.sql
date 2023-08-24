@@ -18,12 +18,11 @@ CREATE TABLE payment (
   PRIMARY KEY (id),
   UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
   UNIQUE INDEX order_id_UNIQUE (order_id ASC) VISIBLE,
-  CONSTRAINT fk_payment_order_id
+  CONSTRAINT fk_payment_orders
     FOREIGN KEY (order_id)
     REFERENCES orders (id)
     ON DELETE CASCADE
     ON UPDATE NO ACTION);
-
 
 -- changeset liquibase:3
  CREATE TABLE ticket (
@@ -34,8 +33,8 @@ CREATE TABLE payment (
    event_time DATETIME NOT NULL,
    PRIMARY KEY (id),
    UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
-   UNIQUE INDEX order_id_UNIQUE (order_id ASC) VISIBLE,
-   CONSTRAINT fk_ticket_order_id
+   UNIQUE INDEX orders_UNIQUE (order_id ASC) VISIBLE,
+   CONSTRAINT fk_ticket_orders
      FOREIGN KEY (order_id)
      REFERENCES orders (id)
      ON DELETE NO ACTION
