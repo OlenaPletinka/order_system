@@ -1,7 +1,7 @@
 package com.order_system.demo.service;
 
 import com.order_system.demo.dto.Order;
-import com.order_system.demo.dto.Status;
+import com.order_system.demo.dto.OrderStatus;
 import com.order_system.demo.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,9 +20,8 @@ public class OrderServiceImpl implements OrderService{
   @Override
   public Order createOrder(String description) {
     Order order = new Order();
-    order.setDate(LocalDateTime.now());
-    order.setStatus(Status.NEW);
-    order.setDescription(description);
+    order.setTime(LocalDateTime.now());
+    order.setStatus(OrderStatus.NEW);
     return orderRepository.save(order);
   }
 }

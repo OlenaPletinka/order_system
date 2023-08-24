@@ -1,6 +1,6 @@
 package com.order_system.demo.dto;
 
-public enum Status {
+public enum OrderStatus {
   NEW,
   PAYED,
   COMPLETED,
