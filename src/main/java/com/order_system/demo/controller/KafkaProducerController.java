@@ -19,6 +19,7 @@ public class KafkaProducerController {
   }
 
   @GetMapping(path = "/publish")
+//  http://localhost:8080/api/kafka/publish?message=hello%20world
   public ResponseEntity<String>publish(@RequestParam("message") String message){
     kafkaProducer.sendMessage(message);
     return ResponseEntity.ok("Message sent to the kafka topic");
