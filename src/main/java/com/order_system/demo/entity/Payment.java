@@ -1,4 +1,4 @@
-package com.order_system.demo.dto;
+package com.order_system.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,21 +14,21 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Ticket {
+public class Payment {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
-  @ManyToOne
+  @OneToOne
   @JoinColumn(name = "order_id", referencedColumnName = "id")
   private Order orders;
 
   @Column
-  private Integer seatsNumber;
+  private LocalDateTime date;
 
   @Column
-  private String eventName;
+  private BigDecimal total;
 
-  @Column
-  private LocalDateTime eventTime;
+  @Enumerated(EnumType.STRING)
+  private PaymentStatus status;
 }

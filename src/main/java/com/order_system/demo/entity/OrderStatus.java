@@ -1,4 +1,4 @@
-package com.order_system.demo.dto;
+package com.order_system.demo.entity;
 
 public enum OrderStatus {
   NEW,

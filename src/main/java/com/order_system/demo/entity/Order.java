@@ -1,4 +1,4 @@
-package com.order_system.demo.dto;
+package com.order_system.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,6 +18,9 @@ import java.util.List;
 public class Order {
   @Id
   private Long id;
+
+  @Column
+  String userName;
 
   @Column
   private LocalDateTime time;

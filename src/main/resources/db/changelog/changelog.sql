@@ -3,6 +3,7 @@
 -- changeset liquibase:1
 CREATE TABLE orders (
   id INT NOT NULL,
+  user_name VARCHAR(45) NOT NULL,
   time DATETIME NOT NULL,
   status VARCHAR(45) NOT NULL,
   PRIMARY KEY (id),
