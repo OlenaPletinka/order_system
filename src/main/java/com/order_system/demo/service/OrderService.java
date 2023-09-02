@@ -6,4 +6,6 @@ import dto.OrderDto;
 
 public interface OrderService {
   Order createOrder(OrderDto orderDto);
+
+  Order findOrderById(Long orderId);
 }

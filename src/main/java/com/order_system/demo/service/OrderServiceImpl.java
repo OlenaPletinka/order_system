@@ -32,6 +32,11 @@ public class OrderServiceImpl implements OrderService{
     return order;
   }
 
+  @Override
+  public Order findOrderById(Long orderId) {
+    return orderRepository.findById(orderId).get();
+  }
+
   private Order convertToOrder(OrderDto orderDto) {
     Order order = new Order();
     order.setId(orderDto.getId());
