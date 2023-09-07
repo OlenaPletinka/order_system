@@ -1,4 +1,4 @@
-package dto;
+package com.order_system.demo.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

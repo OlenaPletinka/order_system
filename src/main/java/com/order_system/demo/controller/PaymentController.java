@@ -1,7 +1,7 @@
 package com.order_system.demo.controller;
 
 import com.order_system.demo.service.PaymentService;
-import dto.PaymentDto;
+import com.order_system.demo.dto.PaymentDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +16,12 @@ public class PaymentController {
     this.paymentService = paymentService;
   }
 
+//  http://localhost:8080/payment/receive
+//  {
+//    "orderId" : 100,
+//    "date" : "2023-09-01 10:08:02",
+//    "total" : 521
+//}
   @PostMapping(path = "/receive")
   public ResponseEntity<String> receivePayment(@RequestBody PaymentDto dto){
     Long id = paymentService.receivePayment(dto);

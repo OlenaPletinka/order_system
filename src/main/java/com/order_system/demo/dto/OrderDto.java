@@ -1,4 +1,4 @@
-package dto;
+package com.order_system.demo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
