@@ -5,7 +5,7 @@ import com.order_system.demo.entity.OrderStatus;
 import com.order_system.demo.entity.Payment;
 import com.order_system.demo.entity.PaymentStatus;
 import com.order_system.demo.repository.PaymentRepository;
-import dto.PaymentDto;
+import com.order_system.demo.dto.PaymentDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -3,7 +3,7 @@ package com.order_system.demo.service;
 import com.order_system.demo.entity.Order;
 import com.order_system.demo.entity.Ticket;
 import com.order_system.demo.repository.TicketRepository;
-import dto.TicketDto;
+import com.order_system.demo.dto.TicketDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
