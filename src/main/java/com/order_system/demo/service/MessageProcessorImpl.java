@@ -18,13 +18,17 @@ public class MessageProcessorImpl implements MessageProcessor {
   private final OrderService orderService;
   private final PaymentService paymentService;
   private final ReservationKafkaProducer reservationKafkaProducer;
+  private final ReservationCreationService reservationCreationService;
   private static final Logger LOGGER = LoggerFactory.getLogger(MessageProcessorImpl.class);
 
   @Autowired
-  public MessageProcessorImpl(OrderService orderService, PaymentService paymentService, ReservationKafkaProducer reservationKafkaProducer) {
+  public MessageProcessorImpl(OrderService orderService, PaymentService paymentService,
+                              ReservationKafkaProducer reservationKafkaProducer,
+                              ReservationCreationService reservationCreationService) {
     this.orderService = orderService;
     this.paymentService = paymentService;
     this.reservationKafkaProducer = reservationKafkaProducer;
+    this.reservationCreationService = reservationCreationService;
   }
 
   @Override
@@ -42,9 +46,10 @@ public class MessageProcessorImpl implements MessageProcessor {
 
   @Override
   public void processRegistration(OrderDto dto) {
-    LOGGER.info("Messege was sent to Registration microservice");
-    List<ReservationDto>dtos = createReservationsList(dto);
-    reservationKafkaProducer.sendMessageToReservation(dtos);
+    LOGGER.info("Message was sent to Registration microservice");
+    List<ReservationDto> dtos = createReservationsList(dto);
+//    reservationKafkaProducer.sendMessageToReservation(dtos);
+    reservationCreationService.createReservations(dtos);
   }
 
   private List<ReservationDto> createReservationsList(OrderDto dto) {

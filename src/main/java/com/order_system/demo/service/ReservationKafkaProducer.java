@@ -22,5 +22,6 @@ public class ReservationKafkaProducer {
 
   public void sendMessageToReservation(List<ReservationDto> dtos){
     kafkaTemplate.send(AppConstants.RESERVATION_CREATION_TOPIC, dtos);
+    LOGGER.info("Message sent to reservation system.");
   }
 }
