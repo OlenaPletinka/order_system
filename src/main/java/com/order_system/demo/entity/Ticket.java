@@ -15,11 +15,11 @@ import java.time.LocalDateTime;
 @Setter
 public class Ticket {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "order_id", referencedColumnName = "id")
+  @JoinColumn(name = "order_id")
   private Order orders;
 
   @Column

@@ -38,8 +38,8 @@ public class KafkaProducerController {
     OrderDto orderDto = new OrderDto();
     orderDto.setId(200L);
     orderDto.setUserName("Zira Loo");
-    List<TicketDto> tickets = Arrays.asList(new TicketDto(15, "Jasmin", LocalDateTime.of(2023, 10, 12, 17, 30)),
-              new TicketDto(17, "Jasmin", LocalDateTime.of(2023, 12, 10, 17, 30)));
+    List<TicketDto> tickets = Arrays.asList(new TicketDto(1015, "Jasmin", LocalDateTime.of(2023, 10, 12, 17, 30)),
+              new TicketDto(1017, "Jasmin", LocalDateTime.of(2023, 10, 12, 17, 30)));
     orderDto.setTickets(tickets);
     orderReceiveKafkaProducer.sendOrderConfirmationMessage(orderDto);
   }

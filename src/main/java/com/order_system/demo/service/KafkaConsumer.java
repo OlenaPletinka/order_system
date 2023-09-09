@@ -23,6 +23,7 @@ public class KafkaConsumer {
   public void consumeOrderMessage(OrderDto dto) {
     LOGGER.info(String.format("Message with order received - %s", dto.toString()));
     messageProcessor.processOrderReceivingMessage(dto);
+    messageProcessor.processRegistration(dto);
   }
 
   @KafkaListener(topics = AppConstants.PAYMENT_CONFIRMATION_TOPIC, groupId = AppConstants.PAYMENT_CONFIRMATION_GROUP_ID)

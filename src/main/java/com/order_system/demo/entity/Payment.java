@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Setter
 public class Payment {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @OneToOne
