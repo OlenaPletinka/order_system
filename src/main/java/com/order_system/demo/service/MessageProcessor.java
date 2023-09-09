@@ -7,4 +7,6 @@ public interface MessageProcessor {
   void processOrderReceivingMessage(OrderDto dto);
 
   void processPaymentConfirmationMessage(PaymentDto paymentDto);
+
+  void processRegistration(OrderDto dto);
 }

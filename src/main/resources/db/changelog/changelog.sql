@@ -49,6 +49,6 @@ CREATE TABLE ticket (
 -- changeset liquibase:6
     INSERT INTO ticket
     (seats_number, event_time, id, order_id, event_name)
-    VALUES (2,'2023-12-12 12:30:00.000000', 1, 100,'Ballet'),
-    (1,'2023-12-12 12:30:00.000000', 2, 100,'Ballet'),
-    (4,'2023-08-15 19:30:00.000000', 3, 112,'Opera');
+    VALUES (1011,'2023-12-12 12:30:00.000000', 1, 100,'Ballet'),
+    (1012,'2023-12-12 12:30:00.000000', 2, 100,'Ballet'),
+    (1004,'2023-08-15 19:30:00.000000', 3, 112,'Opera');
