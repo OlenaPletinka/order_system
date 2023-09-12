@@ -22,7 +22,7 @@ public class ReservationsCreationServiceImpl implements ReservationCreationServi
 
   @Override
   public void createReservations(List<ReservationDto> dtos) {
-    String url = "http://localhost:8090/reservation/create";
+    String url = "http://reservation-system-service/reservation/create";
     ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, dtos, String.class);
     LOGGER.info(String.format("Reseived response - %s", responseEntity.getBody()));
   }
