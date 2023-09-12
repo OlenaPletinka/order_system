@@ -1,7 +1,7 @@
 package com.order_system.demo.service;
 
-import com.order_system.demo.utils.AppConstants;
 import com.order_system.demo.dto.OrderDto;
+import com.order_system.demo.utils.AppConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
