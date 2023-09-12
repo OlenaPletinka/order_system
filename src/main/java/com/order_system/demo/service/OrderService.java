@@ -1,7 +1,7 @@
 package com.order_system.demo.service;
 
-import com.order_system.demo.entity.Order;
 import com.order_system.demo.dto.OrderDto;
+import com.order_system.demo.entity.Order;
 
 
 public interface OrderService {
